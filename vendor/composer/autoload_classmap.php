@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'AddPhotoIdtoUsers' => $baseDir . '/database/migrations/2020_09_01_182956_add_photo_idto_users.php',
+    'App\\Category' => $baseDir . '/app/Category.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\AdminPostsController' => $baseDir . '/app/Http/Controllers/AdminPostsController.php',
@@ -23,6 +24,7 @@ return array(
     'App\\Http\\Middleware\\RedirectIfAuthenticated' => $baseDir . '/app/Http/Middleware/RedirectIfAuthenticated.php',
     'App\\Http\\Middleware\\TrimStrings' => $baseDir . '/app/Http/Middleware/TrimStrings.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
+    'App\\Http\\Requests\\PostsCreateRequest' => $baseDir . '/app/Http/Requests/PostsCreateRequest.php',
     'App\\Http\\Requests\\UserEditRequest' => $baseDir . '/app/Http/Requests/UserEditRequest.php',
     'App\\Http\\Requests\\UsersRequest' => $baseDir . '/app/Http/Requests/UsersRequest.php',
     'App\\Photo' => $baseDir . '/app/Photo.php',
@@ -50,6 +52,7 @@ return array(
     'Collective\\Html\\HtmlBuilder' => $vendorDir . '/laravelcollective/html/src/HtmlBuilder.php',
     'Collective\\Html\\HtmlFacade' => $vendorDir . '/laravelcollective/html/src/HtmlFacade.php',
     'Collective\\Html\\HtmlServiceProvider' => $vendorDir . '/laravelcollective/html/src/HtmlServiceProvider.php',
+    'CreateCategoriesTable' => $baseDir . '/database/migrations/2020_09_05_081158_create_categories_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreatePhotosTable' => $baseDir . '/database/migrations/2020_09_02_032743_create_photos_table.php',
     'CreatePostsTable' => $baseDir . '/database/migrations/2020_09_05_012644_create_posts_table.php',
