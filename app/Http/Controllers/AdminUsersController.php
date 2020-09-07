@@ -58,7 +58,7 @@ class AdminUsersController extends Controller
             $photo = Photo::create(['file' => $name]);
             $input['photo_id'] = $photo->id;
         }
-        // $input['password']=bcrypt($request->password);
+        $input['password']=bcrypt($request->password);
 
         User::create($input);
         return redirect('/admin/users');
@@ -109,7 +109,7 @@ class AdminUsersController extends Controller
             $input = $request->except('password');
         } else {
             $input = $request->all();
-            // $input['password']=bcrypt($request->password);
+            $input['password']=bcrypt($request->password);
         }
 
 
@@ -137,7 +137,6 @@ class AdminUsersController extends Controller
     public function destroy($id)
     {
         //
-
         $user = User::findOrFail($id);
 
         unlink(public_path() . $user->photo->file);
