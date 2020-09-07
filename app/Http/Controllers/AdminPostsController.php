@@ -8,6 +8,7 @@ use App\Photo;
 use Illuminate\Http\Request;
 use App\Post;
 use Illuminate\Support\Facades\Auth;
+use Symfony\Component\VarDumper\Caster\RedisCaster;
 
 class AdminPostsController extends Controller
 {
@@ -22,7 +23,7 @@ class AdminPostsController extends Controller
         $posts = Post::all();
         // return $posts;
 
-        return view('admin.posts.index',compact('posts'));
+        return view('admin.posts.index', compact('posts'));
     }
 
     /**
@@ -33,8 +34,8 @@ class AdminPostsController extends Controller
     public function create()
     {
         //
-        $categories=Category::pluck('name', 'id')->toArray();
-        return view('admin.posts.create',compact('categories'));
+        $categories = Category::pluck('name', 'id')->toArray();
+        return view('admin.posts.create', compact('categories'));
     }
 
     /**
@@ -78,7 +79,9 @@ class AdminPostsController extends Controller
     public function edit($id)
     {
         //
-
+        $post = Post::findOrFail($id);
+        $categories = Category::pluck('name', 'id')->toArray();
+        return view('admin.posts.edit', compact('post', 'categories'));
     }
 
     /**
@@ -90,7 +93,23 @@ class AdminPostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $input = $request->all();
+
+
+        if ($file = $request->file('photo_id')) {
+
+            $name = time() . $file->getClientOriginalName();
+
+            $file->move('images', $name);
+
+            $photo = Photo::create(['file' => $name]);
+            $input['photo_id'] = $photo->id;
+        }
+        // $post->update($input);
+        Auth::user()->posts()->whereId($id)->first()->update($input);
+
+        return redirect('/admin/posts');
     }
 
     /**
@@ -102,5 +121,11 @@ class AdminPostsController extends Controller
     public function destroy($id)
     {
         //
+        $post = Post::findOrFail($id);
+
+        unlink(public_path() . $post->photo->file);
+        $post->delete();
+
+        return redirect('/admin/posts');
     }
 }

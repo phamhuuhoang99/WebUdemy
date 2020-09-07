@@ -28,6 +28,8 @@
         {!! Form::submit('Create Post', ['class' => 'btn btn-primary']) !!}
     </div>
     {!! Form::close() !!}
+
+
     <div class="row">
         @if (count($errors) > 0)
             <div class="alert alert-danger">
