@@ -16,7 +16,6 @@
 
                 </tr>
             </thead>
-
             <tbody>
                 @foreach ($photos as $photo)
                     <tr>

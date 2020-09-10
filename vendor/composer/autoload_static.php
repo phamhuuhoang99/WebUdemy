@@ -328,6 +328,8 @@ class ComposerStaticInit6125a4816f4bd5f4ef0837c1041c4946
     public static $classMap = array (
         'AddPhotoIdtoUsers' => __DIR__ . '/../..' . '/database/migrations/2020_09_01_182956_add_photo_idto_users.php',
         'App\\Category' => __DIR__ . '/../..' . '/app/Category.php',
+        'App\\Comment' => __DIR__ . '/../..' . '/app/Comment.php',
+        'App\\CommentReply' => __DIR__ . '/../..' . '/app/CommentReply.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\AdminCategoriesController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminCategoriesController.php',
@@ -408,6 +410,8 @@ class ComposerStaticInit6125a4816f4bd5f4ef0837c1041c4946
         'Collective\\Html\\HtmlFacade' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlFacade.php',
         'Collective\\Html\\HtmlServiceProvider' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlServiceProvider.php',
         'CreateCategoriesTable' => __DIR__ . '/../..' . '/database/migrations/2020_09_05_081158_create_categories_table.php',
+        'CreateCommentRepliesTable' => __DIR__ . '/../..' . '/database/migrations/2020_09_09_162919_create_comment_replies_table.php',
+        'CreateCommentsTable' => __DIR__ . '/../..' . '/database/migrations/2020_09_09_162849_create_comments_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreatePhotosTable' => __DIR__ . '/../..' . '/database/migrations/2020_09_02_032743_create_photos_table.php',
         'CreatePostsTable' => __DIR__ . '/../..' . '/database/migrations/2020_09_05_012644_create_posts_table.php',

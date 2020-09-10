@@ -8,6 +8,8 @@ $baseDir = dirname($vendorDir);
 return array(
     'AddPhotoIdtoUsers' => $baseDir . '/database/migrations/2020_09_01_182956_add_photo_idto_users.php',
     'App\\Category' => $baseDir . '/app/Category.php',
+    'App\\Comment' => $baseDir . '/app/Comment.php',
+    'App\\CommentReply' => $baseDir . '/app/CommentReply.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\AdminCategoriesController' => $baseDir . '/app/Http/Controllers/AdminCategoriesController.php',
@@ -88,6 +90,8 @@ return array(
     'Collective\\Html\\HtmlFacade' => $vendorDir . '/laravelcollective/html/src/HtmlFacade.php',
     'Collective\\Html\\HtmlServiceProvider' => $vendorDir . '/laravelcollective/html/src/HtmlServiceProvider.php',
     'CreateCategoriesTable' => $baseDir . '/database/migrations/2020_09_05_081158_create_categories_table.php',
+    'CreateCommentRepliesTable' => $baseDir . '/database/migrations/2020_09_09_162919_create_comment_replies_table.php',
+    'CreateCommentsTable' => $baseDir . '/database/migrations/2020_09_09_162849_create_comments_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreatePhotosTable' => $baseDir . '/database/migrations/2020_09_02_032743_create_photos_table.php',
     'CreatePostsTable' => $baseDir . '/database/migrations/2020_09_05_012644_create_posts_table.php',
