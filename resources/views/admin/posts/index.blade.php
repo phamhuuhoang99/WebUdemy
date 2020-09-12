@@ -10,6 +10,8 @@
                 <th>Photo</th>
                 <th>Title</th>
                 <th>Body</th>
+                <th>Post link</th>
+                <th>Comments</th>
                 <th>Created</th>
                 <th>Updated</th>
             </tr>
@@ -27,6 +29,8 @@
                             <{{ $post->photo_id }}< /td> --}}
                         <td>{{ $post->title }}</td>
                         <td>{{ str_limit($post->body,10) }}</td>
+                        <td><a href="{{route('home.post',$post->id)}}">View Post</a></td>
+                        <td><a href="{{route('comments.show',$post->id)}}">View Comments</a></td>
                         <td>{{ $post->created_at->diffForHumans() }}</td>
                         <td>{{ $post->updated_at->diffForHumans() }}</td>
                     </tr>
